@@ -3,7 +3,7 @@ document.getElementById('drawButton').addEventListener('click', function() {
     const name2 = document.getElementById('name2').value;
 
     // Kiểm tra tên có chứa "Nhật" hoặc "nhật"
-    if (name1.toLowerCase() === 'nhật' || name2.toLowerCase() === 'nhật') {
+    if (name1.includes('Nhật') || name1.includes('nhật') || name2.includes('Nhật') || name2.includes('nhật')) {
         window.open('https://youtu.be/dQw4w9WgXcQ?si=c5jPwu0KdkY1nsp0', '_blank'); // Mở trang web rich roll
         return;
     }
@@ -49,25 +49,3 @@ const tarotCards = [
     { name: "Judgment", meaning: "Đánh giá, sự hồi sinh, sự thức tỉnh. Thời gian để xem xét lại cuộc sống.", image: "images/judgment.jpg" },
     { name: "The World", meaning: "Hoàn thành, sự đạt được, sự viên mãn. Một hành trình đã hoàn thành.", image: "images/world.jpg" },
 ];
-
-document.getElementById('drawButton').addEventListener('click', function() {
-    const name1 = document.getElementById('name1').value;
-    const name2 = document.getElementById('name2').value;
-
-    if (!name1 || !name2) {
-        alert("Vui lòng nhập tên của cả hai người!");
-        return;
-    }
-
-    const randomCardIndex = Math.floor(Math.random() * tarotCards.length);
-    const card = tarotCards[randomCardIndex];
-
-    const resultText = `
-        <div class="card">
-            <img src="${card.image}" alt="${card.name}">
-            <h2>${card.name}</h2>
-            <p>${card.meaning}</p>
-        </div>
-    `;
-    document.getElementById('result').innerHTML = resultText;
-});
