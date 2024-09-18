@@ -3,7 +3,7 @@ document.getElementById('drawButton').addEventListener('click', function() {
     const name2 = document.getElementById('name2').value;
 
     // Kiểm tra tên có chứa "Nhật" hoặc "nhật"
-    if (name1.includes('Nhật') || name1.includes('nhật') || name2.includes('Nhật') || name2.includes('nhật')) {
+    if (name1.includes('Nhật') || name1.includes('nhật') || name1.includes('nhat') || name1.includes('Nhat')|| name2.includes('Nhật') || name2.includes('nhật') || name2.includes('nhat') || name2.includes('Nhat')) {
         window.open('https://youtu.be/dQw4w9WgXcQ?si=c5jPwu0KdkY1nsp0', '_blank'); // Mở trang web rich roll
         return;
     }
