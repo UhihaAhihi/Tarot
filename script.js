@@ -1,3 +1,31 @@
+document.getElementById('drawButton').addEventListener('click', function() {
+    const name1 = document.getElementById('name1').value;
+    const name2 = document.getElementById('name2').value;
+
+    // Kiểm tra tên có chứa "Nhật" hoặc "nhật"
+    if (name1.toLowerCase() === 'nhật' || name2.toLowerCase() === 'nhật') {
+        window.open('https://youtu.be/dQw4w9WgXcQ?si=c5jPwu0KdkY1nsp0', '_blank'); // Mở trang web rich roll
+        return;
+    }
+
+    if (!name1 || !name2) {
+        alert("Vui lòng nhập tên của cả hai người!");
+        return;
+    }
+
+    const randomCardIndex = Math.floor(Math.random() * tarotCards.length);
+    const card = tarotCards[randomCardIndex];
+
+    const resultText = `
+        <div class="card">
+            <img src="${card.image}" alt="${card.name}">
+            <h2>${card.name}</h2>
+            <p>${card.meaning}</p>
+        </div>
+    `;
+    document.getElementById('result').innerHTML = resultText;
+});
+
 const tarotCards = [
     { name: "The Fool", meaning: "Khởi đầu mới, tiềm năng. Đây là lá bài của sự khởi đầu, sự tự do và cuộc phiêu lưu.", image: "images/fool.jpg" },
     { name: "The Magician", meaning: "Sự sáng tạo, quyền lực, năng lực. Bạn có khả năng biến ước mơ thành hiện thực.", image: "images/magician.jpg" },
